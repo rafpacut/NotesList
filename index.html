@@ -7,8 +7,10 @@
 	<body ng-app="notesList">
 
 	<div ng-controller="notes_ctrl">
-		<div ng-repeat="note in notes">
-			{{ note }}
+		<div ng-repeat="(noteText, imgSources) in notes">
+			<div>
+				{{ noteText }} blah {{ imgSources }}
+			</div>
 		</div>
 
 			Notes: <br>
