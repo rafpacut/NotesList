@@ -1,11 +1,26 @@
 <html>
 	<head>
-		<script src="temp.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+		<script type="text/javascript" src="ctrl/notesCtrl.js"></script>
 	</head>
 
-	<body ng-app="notes">
+	<body ng-app="notesList">
 
+	<div ng-controller="notes_ctrl">
+		<div ng-repeat="note in notes">
+			{{ note }}
+		</div>
 
+			Notes: <br>
+			<form name="notes_form" >
+				<label>
+					<input ng-model="note" >
+					<input type="submit" ng-click="addNote(note)">
+				</label>
+			</form>
+	</div>
+
+		
 
 
 	</body>
