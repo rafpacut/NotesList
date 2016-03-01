@@ -22,6 +22,10 @@ angular.module('notesList')
 		};
 	};
 
+	$scope.deleteNote = function(index) {
+		$scope.notes.splice(index, 1);
+	}
+
 	$scope.addNote = function(noteText) {
 
 		var note = { 
