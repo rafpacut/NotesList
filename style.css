@@ -1,0 +1,15 @@
+.notes_container {
+	display: table;
+	width: 100%;
+}
+
+
+.note_img {
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.note_text {
+	vertical-align: middle;
+	display: table-cell;
+}
