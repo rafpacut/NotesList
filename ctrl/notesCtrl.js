@@ -7,9 +7,16 @@ angular.module('notesList')
 
 	function detectImages(note) {
 	
-		var imgRegex = /https?:\/\/.*\.(?:png|jpg)/i;
-		var imgSources = note.match(imgRegex);
-		return imgSources;
+		var imgRegex = /https?:\/\/.*\.(?:png|jpg)/gi;
+		var urlRegex = /(https?:\/\/[^\s]+)/g;
+		var urls = note.match(urlRegex);
+		var urls_string = urls.toString();
+		var imgSources = urls_string.match(imgRegex);
+		var imgSources = imgSources.toString();
+		var imgSources2 = imgSources.split(",");
+
+		if(imgSources2 != null)
+			return imgSources2;
 	}
 
 	$scope.notes = storageMethod.retrieve();

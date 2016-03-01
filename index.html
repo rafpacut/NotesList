@@ -15,7 +15,7 @@
 		<div ng-repeat="note in notes track by $index" class="notes_container">
 			<div click-to-edit="note">
 			</div>
-			<div ng-repeat="imgSrc in note.imgSources" class="note_img">
+			<div ng-repeat="imgSrc in note.imgSources track by $index" class="note_img">
 				<img src="{{ imgSrc }}">
 			</div>
 		</div>

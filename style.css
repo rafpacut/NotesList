@@ -4,17 +4,22 @@
 	border-radius: 25px;
 	padding: 20px;
 	border: 2px solid #73AD21;
+	max-width: 100%;
 }
 
 
 .note_img {
 	vertical-align: middle;
 	display: table-cell;
+	max-width: 50%;
+	height:	auto;
 }
 
 .note_text {
 	vertical-align: middle;
 	display: table-cell;
+	max-width: 50%;
+	height:	auto;
 }
 
 #noteForm {
