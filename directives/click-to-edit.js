@@ -39,10 +39,6 @@ angular.module('notesList')
 				$scope.view.editorEnabled = false;
 			};
 
-			$scope.save = function() {
-				$scope.value.text = $scope.view.editableValue;
-				$scope.disableEditor();
-			};
 			}}});
 
 
