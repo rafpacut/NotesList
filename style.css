@@ -11,15 +11,11 @@
 .note_img {
 	vertical-align: middle;
 	display: table-cell;
-	max-width: 50%;
-	height:	auto;
 }
 
 .note_text {
 	vertical-align: middle;
 	display: table-cell;
-	max-width: 50%;
-	height:	auto;
 }
 
 #noteForm {

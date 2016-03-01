@@ -5,12 +5,18 @@ angular.module('notesList')
 
 	storageMethod.init();
 
-	function detectImages(note) {
+	/*
+	 * urlRegex: Get urls from noteText
+	 * imgRegex: Get img url from urls
+	 */
+	function detectImages(noteText) {
 	
 		var imgRegex = /https?:\/\/.*\.(?:png|jpg)/gi;
 		var urlRegex = /(https?:\/\/[^\s]+)/g;
-		var urls = note.match(urlRegex);
+
+		var urls = noteText.match(urlRegex);
 		var urls_string = urls.toString();
+
 		var imgSources = urls_string.match(imgRegex);
 		var imgSources = imgSources.toString();
 		var imgSources2 = imgSources.split(",");

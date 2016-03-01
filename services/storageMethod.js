@@ -1,4 +1,8 @@
 angular.module('notesList', [])
+
+/*
+ * Implement different init, store and retrieve functions to change storage type
+ */
 .factory('storageMethod', function() {
 
 		return {
