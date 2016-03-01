@@ -25,14 +25,12 @@ angular.module('notesList')
 			controller: function($scope) {
 				$scope.value = "=clickToEdit";
 				$scope.view = {
-					editableValue:	$scope.value.text,
 					editorEnabled:	false
 				};
 
 
 			$scope.enableEditor = function() {
 				$scope.view.editorEnabled = true;
-				$scope.view.editableValue = $scope.value.text;
 			};
 
 			$scope.disableEditor = function() {
