@@ -1,6 +1,6 @@
-angular.module('notesList', [])
+angular.module('notesList')
 
-.controller('notes_ctrl', ['$scope', function( $scope ) {
+.controller('notes_ctrl', ['$scope', 'storageMethod', function( $scope, storageMethod ) {
 
 	function detectImages(note) {
 	
@@ -9,21 +9,7 @@ angular.module('notesList', [])
 		return imgSources;
 	}
 
-	var init = function(){};
-	var store = function(notes) {
-		localStorage.setItem('notes', JSON.stringify(notes));
-	};
-
-	var retrieve = function() {
-		var notes = localStorage.getItem('notes');
-		if(  notes != null )
-			return JSON.parse(notes);
-		else
-			return [];
-	};
-
-	var localStorageMethod = new storageMethod(init, store, retrieve);
-	$scope.notes = localStorageMethod.retrieve();
+	$scope.notes = storageMethod.retrieve();
 
 	$scope.addNote = function(noteText) {
 
@@ -33,7 +19,7 @@ angular.module('notesList', [])
 		}
 
 		$scope.notes.push(note);
-		localStorageMethod.store($scope.notes);
+		storageMethod.store($scope.notes);
 	};
 
 
