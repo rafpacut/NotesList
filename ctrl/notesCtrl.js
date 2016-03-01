@@ -2,6 +2,9 @@ angular.module('notesList')
 
 .controller('notes_ctrl', ['$scope', 'storageMethod', function( $scope, storageMethod ) {
 
+
+	storageMethod.init();
+
 	function detectImages(note) {
 	
 		var imgRegex = /https?:\/\/.*\.(?:png|jpg)/i;
@@ -10,6 +13,14 @@ angular.module('notesList')
 	}
 
 	$scope.notes = storageMethod.retrieve();
+
+
+	$scope.editNote = function(noteText, index) {
+		$scope.notes[index] = {
+			text:	noteText,
+			imgSources: detectImages(noteText)
+		};
+	};
 
 	$scope.addNote = function(noteText) {
 

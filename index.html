@@ -1,26 +1,28 @@
 <html>
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-		<script type="text/javascript" src="storageMethod.js"></script>
+		<script type="text/javascript" src="services/storageMethod.js"></script>
 		<script type="text/javascript" src="ctrl/notesCtrl.js"></script>
+		<script type="text/javascript" src="directives/click-to-edit.js"></script>
+
+		<link type="text/css"        href="style.css" rel="stylesheet"/>
 	</head>
 
 	<body ng-app="notesList">
 
 	<div ng-controller="notes_ctrl">
-		<div ng-repeat="note in notes">
-			<div>
-				{{ note.text }}
-				<div ng-repeat="imgSrc in note.imgSources">
-					<img src="{{ imgSrc }}">
-				</div>
+		Notes: <br>
+		<div ng-repeat="note in notes track by $index" class="notes_container">
+			<div click-to-edit="note">
+			</div>
+			<div ng-repeat="imgSrc in note.imgSources" class="note_img">
+				<img src="{{ imgSrc }}">
 			</div>
 		</div>
 
-			Notes: <br>
 			<form name="notes_form" >
 				<label>
-					<input ng-model="note" >
+					<textarea ng-model="note" > </textarea>
 					<input type="submit" ng-click="addNote(note)">
 				</label>
 			</form>
