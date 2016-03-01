@@ -1,6 +1,9 @@
 .notes_container {
 	display: table;
 	width: 100%;
+	border-radius: 25px;
+	padding: 20px;
+	border: 2px solid #73AD21;
 }
 
 
@@ -13,3 +16,8 @@
 	vertical-align: middle;
 	display: table-cell;
 }
+
+#noteForm {
+	border-radius: 25px;
+	padding: 20px;
+	border: 2px solid #f6270d

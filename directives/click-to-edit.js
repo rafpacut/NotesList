@@ -5,7 +5,7 @@ angular.module('notesList')
 
 		var editTemplate = '<div class="click-to-edit">' + 
 					'<div ng-hide="view.editorEnabled">'+
-						'{{note.text}}' +
+						'{{note.text}}' + '<br>' +
 						'<button ng-click="enableEditor()">Edit</button>' +
 						'<button ng-click="deleteNote($index)">Delete</button>' +
 						'</div>' + 
