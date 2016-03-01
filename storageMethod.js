@@ -1,10 +1,6 @@
-function storageMethod(var store, var retrieve){ //storageAbstract, 
-	
-	this.init 	= init;
-	this.store 	= store;
-	this.retrieve 	= retrieve;
-
-
+function storageMethod(init, store, retrieve) {
+	this.init = init;
+	this.store = store;
+	this.retrieve = retrieve;
 }
-
 
